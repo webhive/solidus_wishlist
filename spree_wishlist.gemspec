@@ -6,7 +6,7 @@ require 'spree_wishlist/version'
 
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
-  s.name        = 'spree_wishlist'
+  s.name        = 'solidus_wishlist'
   s.version     = SpreeWishlist.version
   s.summary     = 'Add wishlists to Spree'
   s.description = s.summary
@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.require_path  = 'lib'
   s.requirements << 'none'
 
-  s.add_runtime_dependency 'spree_core', '~> 3.1.0.beta'
+  s.add_runtime_dependency 'solidus_core', '~> 1.2'
 
   s.add_development_dependency 'factory_girl', '~> 4.4'
   s.add_development_dependency 'ffaker'
