@@ -1,4 +1,4 @@
-module SpreeWishlist
+module SolidusWishlist
   module Generators
     class InstallGenerator < Rails::Generators::Base
       class_option :auto_run_migrations, type: :boolean, default: false
@@ -12,7 +12,7 @@ module SpreeWishlist
       end
 
       def add_migrations
-        run 'rake railties:install:migrations FROM=spree_wishlist'
+        run 'rake railties:install:migrations FROM=solidus_wishlist'
       end
 
       def run_migrations
