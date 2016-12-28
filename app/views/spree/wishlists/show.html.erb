@@ -49,7 +49,7 @@
     <% end -%>
       <td>
         <% if variant.images.length == 0 %>
-          <%= small_image(variant.product) %>
+          <%= variant.product.display_image.attachment(:small) %>
         <% else %>
           <%= image_tag variant.images.first.attachment.url(:small) %>
         <% end %>
