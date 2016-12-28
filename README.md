@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/boomerdigital/solidus_wishlist/tree/master.svg?style=svg)](https://circleci.com/gh/boomerdigital/solidus_wishlist/tree/master)
 
-The Spree Wishlist extension enables multiple wishlists per user, as well as managing those as public (sharable) and private. It also includes the ability to notify a friend via email of a recommended product.
+The Solidus Wishlist extension enables multiple wishlists per user, as well as managing those as public (sharable) and private. It also includes the ability to notify a friend via email of a recommended product.
 
 ---
 
