@@ -4,8 +4,6 @@
 
 The Solidus Wishlist extension enables multiple wishlists per user, as well as managing those as public (sharable) and private.
 
-WIP: <!-- It also includes the ability to notify a friend via email of a recommended product. -->
-
 ---
 
 ## Installation
@@ -13,7 +11,12 @@ WIP: <!-- It also includes the ability to notify a friend via email of a recomme
 Add the following to your `Gemfile`
 ```ruby
 gem 'solidus_wishlist', github: 'boomerdigital/solidus_wishlist', branch: 'master'
-WIP: <!-- gem 'spree_email_to_friend', github: 'spree-contrib/spree_email_to_friend', branch: 'master'  -->
+```
+
+
+If you want to include the ability to email a friend your wishlist, add the following to your `Gemfile`
+```ruby
+gem 'solidus_email_to_friend', github: 'boomerdigital/solidus_email_to_friend', branch: 'master'
 ```
 
 Run
