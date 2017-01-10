@@ -1,6 +1,7 @@
 # Solidus Wishlist
 
 [![CircleCI](https://circleci.com/gh/boomerdigital/solidus_wishlist/tree/master.svg?style=svg)](https://circleci.com/gh/boomerdigital/solidus_wishlist/tree/master)
+[![Build Status](https://api.travis-ci.org/boomerdigital/solidus_wishlist.svg?branch=master)](https://travis-ci.org/boomerdigital/solidus_wishlist)
 
 The Solidus Wishlist extension enables multiple wishlists per user, as well as managing those as public (sharable) and private.
 
