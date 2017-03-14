@@ -25,13 +25,11 @@ Gem::Specification.new do |s|
   s.add_dependency "solidus_core", [">= 1.0.0", "< 3"]
 
   s.add_development_dependency 'factory_girl', '~> 4.4'
-  s.add_development_dependency 'ffaker'
   s.add_development_dependency 'rspec-rails'
-  s.add_development_dependency 'rails-controller-testing'
   s.add_development_dependency 'sqlite3', '~> 1.3.10'
   s.add_development_dependency 'capybara', '~> 2.4'
   s.add_development_dependency 'poltergeist', '~> 1.6.0'
-  s.add_development_dependency 'database_cleaner', '~> 1.4.0'
+  s.add_development_dependency 'database_cleaner'
   s.add_development_dependency 'simplecov', '~> 0.9.0'
   s.add_development_dependency 'shoulda-matchers', '~> 2.5'
   s.add_development_dependency 'coffee-rails'

@@ -11,11 +11,13 @@ rescue LoadError
 end
 
 require 'rspec/rails'
-require 'ffaker'
 require 'shoulda-matchers'
 require 'pry'
-require 'rails-controller-testing'
+require 'ffaker'
 
+Dir[File.join(File.dirname(__FILE__), 'support/**/*.rb')].each { |file| require file }
+
+Dir[File.join(File.dirname(__FILE__), 'factories/*.rb')].each { |f| require f }
 
 RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
@@ -29,12 +31,4 @@ RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.syntax = :expect
   end
-
-  [:controller, :view, :request].each do |type|
-    config.include ::Rails::Controller::Testing::TestProcess, :type => type
-    config.include ::Rails::Controller::Testing::TemplateAssertions, :type => type
-    config.include ::Rails::Controller::Testing::Integration, :type => type
-  end
 end
-
-Dir[File.join(File.dirname(__FILE__), 'support/**/*.rb')].each { |file| require file }
