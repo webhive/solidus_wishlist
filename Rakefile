@@ -6,10 +6,17 @@ require 'spree/testing_support/common_rake'
 
 RSpec::Core::RakeTask.new
 
-task default: :spec
+task default: %i(first_run spec)
 
 desc 'Generates a dummy app for testing'
 task :test_app do
   ENV['LIB_NAME'] = 'solidus_wishlist'
   Rake::Task['common:test_app'].invoke
+end
+
+task :first_run do
+  if Dir['spec/dummy'].empty?
+    Rake::Task[:test_app].invoke
+    Dir.chdir('../../')
+  end
 end
