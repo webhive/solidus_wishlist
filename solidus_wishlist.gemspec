@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
   s.add_dependency "solidus_core", [">= 1.2.0", "< 3"]
   s.add_dependency "solidus_support"
 
-  s.add_development_dependency 'factory_girl', '~> 4.4'
+  s.add_development_dependency 'factory_bot', '~> 4.4'
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'sqlite3', '~> 1.3.10'
   s.add_development_dependency 'capybara', '~> 2.4'
