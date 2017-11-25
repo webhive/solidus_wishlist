@@ -119,6 +119,62 @@ RSpec.feature 'Wishlist', :js do
       end
     end
   end
+  
+  context 'wishlist privacy settings', type: :controller do
+    given(:wishlist) { create(:wishlist) }
+
+    context 'when logged out' do
+
+      scenario 'visit a private wishlist' do
+        wishlist.update_attributes(is_private: true)
+
+        visit spree.wishlist_path(wishlist)
+
+        expect(current_path).not_to match(spree.wishlist_path(wishlist))
+        expect(page).not_to have_content wishlist.name
+      end
+
+      scenario 'visit a public wishlist' do
+        wishlist.update_attributes(is_private: false)
+
+        visit spree.wishlist_path(wishlist)
+
+        expect(current_path).to match(spree.wishlist_path(wishlist))
+        expect(page).to have_content wishlist.name
+      end
+    end
+
+    context 'when logged in', type: :controller do
+      given(:user_1)      { create(:user) }
+      given(:user_2)      { create(:user) }
+
+      background do
+        sign_in_as! user_1
+      end
+
+      scenario 'visit own private wishlist' do
+        wishlist.is_private = true
+        wishlist.user = user_1
+        wishlist.save
+
+        visit spree.wishlist_path(wishlist)
+
+        expect(current_path).to match(spree.wishlist_path(wishlist))
+        expect(page).to have_content wishlist.name
+      end
+
+      scenario 'visit other private wishlist' do
+        wishlist.is_private = true
+        wishlist.user = user_2
+        wishlist.save
+
+        visit spree.wishlist_path(wishlist)
+
+        expect(current_path).not_to match(spree.wishlist_path(wishlist))
+        expect(page).not_to have_content wishlist.name
+      end
+    end
+  end
 
   private
 
