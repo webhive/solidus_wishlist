@@ -11,6 +11,6 @@ else
 end
 
 gem 'pg'
-gem 'mysql2'
+gem 'mysql2', '~> 0.4.10'
 
 gemspec
