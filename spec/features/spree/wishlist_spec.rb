@@ -1,14 +1,15 @@
 RSpec.feature 'Wishlist', :js do
-  context 'with no wishlist' do
-    given!(:user) { create(:user) }
+  given(:user) { create(:user) }
+  given(:product) { create(:product) }
 
-    background do
-      sign_in_as! user
-    end
+  context 'with no wishlist' do
 
     context 'create' do
+      background do
+        sign_in_as! user
+      end
+
       scenario 'when user has no existing wishlist' do
-        product = create(:product)
         visit spree.product_path(product)
         click_button 'Add to wishlist'
 
@@ -119,7 +120,7 @@ RSpec.feature 'Wishlist', :js do
       end
     end
   end
-  
+
   context 'wishlist privacy settings', type: :controller do
     given(:wishlist) { create(:wishlist) }
 
