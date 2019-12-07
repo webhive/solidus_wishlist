@@ -13,6 +13,10 @@ Add the following to your `Gemfile`
 gem 'solidus_wishlist', github: 'boomerdigital/solidus_wishlist', branch: 'master'
 ```
 
+If you want to disable defacing of product/user views, add the following to your `Gemfile`
+```ruby
+gem 'solidus_wishlist', github: 'boomerdigital/solidus_wishlist', branch: 'master', require: 'solidus_wishlist_no_deface'
+```
 
 If you want to include the ability to email a friend your wishlist, add the following to your `Gemfile`
 ```ruby
