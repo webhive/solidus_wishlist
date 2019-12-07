@@ -43,6 +43,7 @@ Simply add this require statement to your spec_helper:
 
 ```ruby
 require 'solidus_whishlist/factories'
+```
 
 ---
 
