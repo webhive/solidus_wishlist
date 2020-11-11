@@ -20,10 +20,10 @@ Dir[File.join(File.dirname(__FILE__), 'support/**/*.rb')].each { |file| require 
 Dir[File.join(File.dirname(__FILE__), 'factories/*.rb')].each { |f| require f }
 
 RSpec.configure do |config|
-  config.infer_spec_type_from_file_location!
+  # config.infer_spec_type_from_file_location!
   config.raise_errors_for_deprecations!
   config.mock_with :rspec
-  config.use_transactional_fixtures = false
+  # config.use_transactional_fixtures = false
   config.fail_fast = false
   config.filter_run focus: true
   config.run_all_when_everything_filtered = true

@@ -3,6 +3,7 @@ spec/test_app
 Gemfile.lock
 *.swp
 /nbproject/private/
+/vendor/
 .DS_Store
 /coverage
 .rvmrc
